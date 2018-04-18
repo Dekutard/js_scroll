@@ -3,18 +3,18 @@
 	<title>Javascript Demo</title>
 	<style>
 		body {
-			background-color:black;
+			background-color:white;
 			font-family: monospace;
-			color:white;
+			color:black;
 			font-size:50px;
 			text-align: center;
 			margin-top:20%;
 		}
 
 		#magic{
-			color: #777;
-			border-right: 1px solid #777;
-			padding-right: 7px;
+			color: #860000;
+			border-right: 1px solid black;
+			padding-right: 5px;
 			display: inline;
 		}
 	</style>
@@ -25,7 +25,7 @@
 
 	<script>
 
-		var words = ["fun", "exciting", "about not giving up", "being helpful", "being open", "what I learned at CodingDojo!"],
+		var words = ["lame", "boring", "about eventually giving up", "being frustrated", "being shut down and told to do stupid things by stupid people", "what I learned at CodingDojo!", "The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee."],
 			el = document.getElementById('magic'),
 			word_counter = 0,
 			character_counter = 0;
@@ -34,7 +34,9 @@
 		{
 			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
 
-			if(character_counter == words[word_counter].length)
+			if (words[word_counter][character_counter] === " ") {el.innerHTML += "&nbsp;"}
+
+			if(character_counter == words[word_counter].length + 1)
 			{
 				word_counter++; 	//choose a different word
 				character_counter = 0;	//start over with the first character of the word
@@ -46,7 +48,7 @@
 			}
 		}
 
-		setInterval(updateText,300);
+		setInterval(updateText,100);
 
 	</script>
 
